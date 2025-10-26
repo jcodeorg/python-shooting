@@ -30,9 +30,9 @@ class Player:
         self.y = SCREEN_HEIGHT - 50
         self.width = 60
         self.height = 60
-        self.speed = 15
-        original_image = pygame.image.load("neko.png")
-        self.image = pygame.transform.scale(original_image, (self.width, self.height))
+        self.speed = 10
+        img = pygame.image.load("neko.png")
+        self.image = pygame.transform.scale(img, (self.width, self.height))
 
     def move(self, keys):
         if keys[pygame.K_LEFT] and self.x > 0:
