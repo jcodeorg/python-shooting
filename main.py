@@ -28,10 +28,12 @@ class Player:
     def __init__(self):
         self.x = SCREEN_WIDTH // 2
         self.y = SCREEN_HEIGHT - 50
-        self.width = 40
-        self.height = 30
-        self.speed = 5
-        
+        self.width = 60
+        self.height = 60
+        self.speed = 15
+        original_image = pygame.image.load("neko.png")
+        self.image = pygame.transform.scale(original_image, (self.width, self.height))
+
     def move(self, keys):
         if keys[pygame.K_LEFT] and self.x > 0:
             self.x -= self.speed
@@ -43,7 +45,8 @@ class Player:
             self.y += self.speed
     
     def draw(self, screen):
-        pygame.draw.rect(screen, BLUE, (self.x, self.y, self.width, self.height))
+        # pygame.draw.rect(screen, BLUE, (self.x, self.y, self.width, self.height))
+        screen.blit(self.image, (self.x, self.y))
 
 # 弾丸クラス
 class Bullet:
@@ -70,7 +73,7 @@ class Enemy:
         self.y = random.randint(-100, -30)
         self.width = 30
         self.height = 30
-        self.speed = random.randint(2, 5)
+        self.speed = random.randint(2, 9)
     
     def move(self):
         self.y += self.speed
