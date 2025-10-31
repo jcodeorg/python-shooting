@@ -44,7 +44,7 @@ class Player:
             self.y -= self.speed
         if keys[pygame.K_DOWN] and self.y < SCREEN_HEIGHT - self.height:
             self.y += self.speed
-    
+     
     def draw(self, screen):
         # 画像の描画
         screen.blit(self.image, (self.x, self.y))
