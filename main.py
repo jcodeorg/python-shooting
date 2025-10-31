@@ -28,9 +28,10 @@ class Player:
     def __init__(self):
         self.x = SCREEN_WIDTH // 2
         self.y = SCREEN_HEIGHT - 50
-        self.width = 60
-        self.height = 60
-        self.speed = 10
+        self.width = 60     # width = 幅
+        self.height = 60    # height = 高さ
+        self.speed = 10     # speed = 速度
+        # 画像の読み込み(load)とサイズ変更(scale)
         img = pygame.image.load("neko.png")
         self.image = pygame.transform.scale(img, (self.width, self.height))
 
@@ -45,7 +46,7 @@ class Player:
             self.y += self.speed
     
     def draw(self, screen):
-        # pygame.draw.rect(screen, BLUE, (self.x, self.y, self.width, self.height))
+        # 画像の描画
         screen.blit(self.image, (self.x, self.y))
 
 # 弾丸クラス
